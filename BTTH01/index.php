@@ -40,15 +40,15 @@ $students = $studentDAO->readAll();
                         <form action="./Student_Manager/addStudent.php" method="post">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="age" class="form-label">Age</label>
-                                <input type="text" class="form-control" name="age">
+                                <input type="text" class="form-control" name="age" required>
                             </div>
                             <div class="mb-3">
                                 <label for="grade" class="form-label">Grade</label>
-                                <input type="text" class="form-control" name="grade">
+                                <input type="text" class="form-control" name="grade" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Add</button>
                         </form>
