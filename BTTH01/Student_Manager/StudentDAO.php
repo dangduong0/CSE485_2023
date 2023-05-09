@@ -3,28 +3,27 @@
 require_once('Student.php');
 
 class StudentDAO {
-    private $students = array();
+    private $filename;
 
     public function __construct($filename) {
-        try {
-            $handle = fopen($filename, "r");
-            if ($handle === false) {
-                throw new Exception("Không thể mở file");
-            }
-            fgets($handle);
-            while (($line = fgets($handle)) !== false) {
-                $studentData = explode(',', $line);
-                $student = new Student($studentData[0], $studentData[1], $studentData[2], $studentData[3]);
-                $this->students[] = $student;
-            }
-            fclose($handle);
-        } catch (Exception $e) {
-            echo 'Lỗi: ' . $e->getMessage();
-        }
+        $this->filename = $filename;
     }
 
-    public function getAll() {
-        return $this->students;
+    public function readAll() {
+        // Đọc toàn bộ dữ liệu từ file CSV
+        $data = array_map('str_getcsv', file($this->filename));
+        // Loại bỏ phần tử đầu tiên trong mảng (tên cột)
+        array_shift($data);
+
+        // Tạo danh sách sinh viên
+        $students = array();
+        foreach ($data as $row) {
+            $student = new Student($row[0], $row[1], $row[2], $row[3]);
+            array_push($students, $student);
+        }
+
+        // Trả về danh sách sinh viên
+        return $students;
     }
-    
+
 }

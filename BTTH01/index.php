@@ -2,10 +2,8 @@
 <?php
 
 require_once('./Student_Manager/StudentDAO.php');
-
 $studentDAO = new StudentDAO('./data/Student.csv');
-$students = $studentDAO->getAll();
-
+$students = $studentDAO->readAll();
 ?>
 
 <!doctype html>
@@ -19,15 +17,15 @@ $students = $studentDAO->getAll();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Quản lí sinh viên</title>
+    <title>STUDENT MANAGER</title>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mt-5">Quản lí sinh viên</h2>
+        <h2 class="text-center mt-5">Student Manager</h2>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Thêm sinh viên
+            Add Student
         </button>
 
         <!-- Modal -->
@@ -35,24 +33,24 @@ $students = $studentDAO->getAll();
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Thông tin sinh viên</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Information Student</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="./Student_Manager/addStudent.php" method="post">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" class="form-control" name="name">
                             </div>
                             <div class="mb-3">
                                 <label for="age" class="form-label">Age</label>
-                                <input type="text" class="form-control" id="age">
+                                <input type="text" class="form-control" name="age">
                             </div>
                             <div class="mb-3">
                                 <label for="grade" class="form-label">Grade</label>
-                                <input type="text" class="form-control" id="grade">
+                                <input type="text" class="form-control" name="grade">
                             </div>
-                            <button type="submit" class="btn btn-primary">Thêm mới</button>
+                            <button type="submit" class="btn btn-primary">Add</button>
                         </form>
                     </div>
                 </div>
@@ -76,8 +74,8 @@ $students = $studentDAO->getAll();
                         <td class="text-center"><?php echo $student->getAge(); ?></td>
                         <td class="text-center"><?php echo $student->getGrade(); ?></td>
                         <td class="text-center">
-                            <a class="btn btn-warning">Sửa</a>
-                            <a class="btn btn-danger">Xóa</a>
+                            <a class="btn btn-warning">Edit</a>
+                            <a class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 <?php } ?>
