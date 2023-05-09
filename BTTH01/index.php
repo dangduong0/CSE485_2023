@@ -1,9 +1,9 @@
 
 <?php
 
-require_once('StudentDAO.php');
+require_once('./Student_Manager/StudentDAO.php');
 
-$studentDAO = new StudentDAO('student.csv');
+$studentDAO = new StudentDAO('./data/Student.csv');
 $students = $studentDAO->getAll();
 
 ?>
