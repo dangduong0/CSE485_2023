@@ -6,4 +6,5 @@
   + Xóa (Ánh)
 - Tạo file csv DSSV (Dương)
 - Viết lệnh để đọc file và lưu vào DSSV để hiển thị trên web (Công)
-- Tạo form bootstrap để nhập dữ liệu mới và lưu vào file (có hàm kt trùng lặp) (Ánh)
+- Tạo form bootstrap để nhập dữ liệu mới và lưu vào file (Ánh)
+- Viết hàm kiểm tra trùng lặp (Dương)
