@@ -30,7 +30,6 @@ class StudentDAO
     }
     public function addStudent($student)
     {
-        // Đọc dữ liệu từ file CSV
             // Đọc toàn bộ dữ liệu từ file CSV
             $data = array_map('str_getcsv', file($this->filename));
             // Tìm ID lớn nhất hiện có
@@ -40,7 +39,6 @@ class StudentDAO
                     $max_id = intval($row[0]);
                 }
             }
-    
             // Tạo ID mới và đặt cho sinh viên mới
             $new_id = $max_id + 1;
             $student->setId($new_id);
@@ -61,5 +59,8 @@ class StudentDAO
             }
             fclose($file);
     }
+   
+    
+
 }
 
