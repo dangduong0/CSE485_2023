@@ -11,7 +11,7 @@ class StudentDAO
         $this->filename = $filename;
     }
 
-    public function readAll()
+    public function getAll()
     {
         // Đọc toàn bộ dữ liệu từ file CSV
         $data = array_map('str_getcsv', file($this->filename));

@@ -3,7 +3,7 @@
 
 require_once('./Student_Manager/StudentDAO.php');
 $studentDAO = new StudentDAO('./data/Student.csv');
-$students = $studentDAO->readAll();
+$students = $studentDAO->getAll();
 ?>
 
 <!doctype html>
@@ -59,7 +59,7 @@ $students = $studentDAO->readAll();
         <table class="table mt-3">
             <thead>
                 <tr>
-                    <th scope="col" class="text-center">#</th>
+                    <th scope="col" class="text-center">ID</th>
                     <th scope="col" class="text-center">Name</th>
                     <th scope="col" class="text-center">Age</th>
                     <th scope="col" class="text-center">Grade</th>
@@ -69,7 +69,7 @@ $students = $studentDAO->readAll();
             <tbody>
                 <?php foreach ($students as $student) { ?>
                     <tr>
-                        <td class="text-center"><?php echo $student->getID(); ?></td>
+                        <td class="text-center"><?php echo $student->getId(); ?></td>
                         <td class="text-center"><?php echo $student->getName(); ?></td>
                         <td class="text-center"><?php echo $student->getAge(); ?></td>
                         <td class="text-center"><?php echo $student->getGrade(); ?></td>
