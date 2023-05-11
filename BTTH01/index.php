@@ -7,7 +7,9 @@ $studentDAO = new StudentDAO('./data/Student.csv');
 $students = $studentDAO->getAll();
 
 
+
 // Lấy dữ liệu từ form
+
 
 
 ?>
@@ -92,9 +94,7 @@ $students = $studentDAO->getAll();
                         <td class="text-center"><?php echo $student->getGrade(); ?></td>
                         <td class="text-center">
                             <a class="btn btn-warning">Edit</a>
-
                             <a class="btn btn-danger">Delete</a>
-
                         </td>
                     </tr>
                 <?php } ?>

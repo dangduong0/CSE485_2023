@@ -31,7 +31,7 @@ class StudentDAO
 
     public function addStudent($student)
     {
-            // Đọc toàn bộ dữ liệu từ file CSV
+// Đọc toàn bộ dữ liệu từ file CSV
             $data = array_map('str_getcsv', file($this->filename));
             // Tìm ID lớn nhất hiện có
             $max_id = 0;
@@ -57,8 +57,36 @@ class StudentDAO
             $file = fopen($this->filename, 'w');
             foreach ($data as $row) {
                 fputcsv($file, $row);
+
             }
-            fclose($file);
+        }
+        
+
+    public function updateStudent($student)
+    {
+        // Đọc toàn bộ dữ liệu từ file CSV
+        $data = array_map('str_getcsv', file($this->filename));
+
+        // Tạo một mảng để lưu trữ dữ liệu đã được sửa
+        $updatedData = array();
+
+        // Duyệt qua mảng dữ liệu và sửa thông tin sinh viên
+        foreach ($data as $row) {
+            if ($row[0] == $student->getId()) {
+                $updatedData[] = array(
+                    $student->getId(),
+                    $student->getName(),
+                    $student->getAge(),
+                    $student->getGrade()
+                );
+            } else {
+                $updatedData[] = $row;
+        // Ghi mảng dữ liệu đã sửa vào file CSV
+        $file = fopen($this->filename, 'w');
+        foreach ($updatedData as $row) {
+            fputcsv($file, $row);
+        }
+        fclose($file);
     }
    
     

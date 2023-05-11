@@ -2,7 +2,9 @@
 session_start();
 require_once './StudentDAO.php';
 
+
 // $errorName;
+
 
 //         $_SESSION['eName']=$errorName;
 //     } else {
