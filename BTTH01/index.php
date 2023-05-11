@@ -1,5 +1,6 @@
 
 <?php
+
 session_start();
 require_once('./Student_Manager/StudentDAO.php');
 $studentDAO = new StudentDAO('./data/Student.csv');
@@ -7,6 +8,7 @@ $students = $studentDAO->getAll();
 
 
 // Lấy dữ liệu từ form
+
 
 ?>
 
@@ -23,11 +25,13 @@ $students = $studentDAO->getAll();
 
     <title>STUDENT MANAGER</title>
 </head>
+
 <style>
     .error{
         color:red;
     }
 </style>
+
 <body>
     <div class="container mt-5">
         <h2 class="text-center mt-5">Student Manager</h2>
@@ -49,9 +53,11 @@ $students = $studentDAO->getAll();
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" name="name" required>
+
                                 <?php if(isset($_SESSION['eName'])): ?>
                             <span class="error"><?php echo $_SESSION['eName']; ?></span>
                         <?php endif; ?>
+
                             </div>
                             <div class="mb-3">
                                 <label for="age" class="form-label">Age</label>
@@ -86,7 +92,9 @@ $students = $studentDAO->getAll();
                         <td class="text-center"><?php echo $student->getGrade(); ?></td>
                         <td class="text-center">
                             <a class="btn btn-warning">Edit</a>
+
                             <a class="btn btn-danger">Delete</a>
+
                         </td>
                     </tr>
                 <?php } ?>
