@@ -64,10 +64,16 @@ $students = $studentDAO->getAll();
                             <div class="mb-3">
                                 <label for="age" class="form-label">Age</label>
                                 <input type="text" class="form-control" name="age" required>
+                                <?php if(isset($_SESSION['eAge'])): ?>
+                            <span class="error"><?php echo $_SESSION['eAge']; ?></span>
+                        <?php endif; ?>
                             </div>
                             <div class="mb-3">
                                 <label for="grade" class="form-label">Grade</label>
                                 <input type="text" class="form-control" name="grade" required>
+                                <?php if(isset($_SESSION['eGrade'])): ?>
+                            <span class="error"><?php echo $_SESSION['eGrade']; ?></span>
+                        <?php endif; ?>
                             </div>
                             <button type="submit" class="btn btn-primary">Add</button>
                         </form>
