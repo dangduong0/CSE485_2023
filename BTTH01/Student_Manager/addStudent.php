@@ -13,7 +13,7 @@ $student->setGrade($grade);
 
 // Thêm sinh viên mới vào file CSV
 $newStudent = new StudentDAO('../data/Student.csv');
-$new_id = $newStudent->addStudent($student);
+$newStudent->addStudent($student);
 
 // Hiển thị thông báo
 header('Location: ../index.php');

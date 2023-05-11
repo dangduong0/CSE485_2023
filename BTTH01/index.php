@@ -3,7 +3,7 @@
 
 require_once('./Student_Manager/StudentDAO.php');
 $studentDAO = new StudentDAO('./data/Student.csv');
-$students = $studentDAO->readAll();
+$students = $studentDAO->getAll();
 ?>
 
 <!doctype html>
@@ -74,7 +74,7 @@ $students = $studentDAO->readAll();
                         <td class="text-center"><?php echo $student->getAge(); ?></td>
                         <td class="text-center"><?php echo $student->getGrade(); ?></td>
                         <td class="text-center">
-                            <a class="btn btn-warning">Edit</a>
+                            <a href="./Student_Manager/editStudent.php?id=<?= $student->getID(); ?>" class="btn btn-warning">Edit</a>
                             <a class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
