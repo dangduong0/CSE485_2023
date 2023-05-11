@@ -89,8 +89,25 @@ class StudentDAO
         fclose($file);
     }
    
+    public function deleteStudent($id)
+    {
+        // Đọc toàn bộ dữ liệu từ file CSV vào mảng
+        $students = array_map('str_getcsv', file($this->filename));
     
-
-
+        // Tạo một mảng mới, chỉ chứa các bản ghi không có id bằng với id muốn xóa
+        $newStudents = array();
+        foreach ($students as $student) {
+            if ($student[0] != $id) {
+                array_push($newStudents, $student);
+            }
+        }
+    
+        // Ghi mảng mới vào file CSV
+        $file = fopen($this->filename, 'w');
+        foreach ($newStudents as $student) {
+            fputcsv($file, $student);
+        }
+        fclose($file);
+    }
 }
 

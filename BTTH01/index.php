@@ -94,7 +94,7 @@ $students = $studentDAO->getAll();
                         <td class="text-center"><?php echo $student->getGrade(); ?></td>
                         <td class="text-center">
                             <a class="btn btn-warning">Edit</a>
-                            <a class="btn btn-danger">Delete</a>
+                            <a class="btn btn-danger" href="./Student_Manager/deleteStudent.php?id=<?php echo $student->getId()?>" onclick="return confirm('Are you sure you want to delete ?')">Delete</a>
                         </td>
                     </tr>
                 <?php } ?>
