@@ -24,9 +24,9 @@
             <?php foreach ($students as $student) { ?>
             <tr class="border">
                 <th scope="row" class="text-center border"><?php echo $count+1 ?></th>
-                <td class="text-center  border"><?php echo $student['std_fullname']?></td>
-                <td class="text-center  border"><?php echo $student['std_age']?></td>
-                <td class="text-center border"></td>
+                <td class="text-center  border"><?php echo $student['name']?></td>
+                <td class="text-center  border"><?php echo $student['class']?></td>
+                <td class="text-center border"><?php echo $student['email']?></td>
                 <td class="text-center border"><a class="btn"><i class="bi bi-pencil-square"></i></a></td>
                 <td class="text-center border"><a class="btn"><i class="bi bi-trash3"></i></a></td>
             </tr>
