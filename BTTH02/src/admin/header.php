@@ -13,7 +13,9 @@
 </head>
 
 <body class="w3-light-grey">
+
     <div class="w3-main" style="margin-left:300px;margin-top:0px;">
+    
     <!-- Top container -->
     <div class="d-flex justify-content-end p-3 align-items-center" style="background-color: #ddd;">
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
@@ -29,3 +31,4 @@
             </ul>
         </div>
     </div>
+ 
