@@ -1,3 +1,26 @@
+<?php
+session_start();
+include '../../config/database.php';
+include '../../includes/function.php';
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $error=[];
+    $username=$_POST['username'];
+
+    $password=$_POST['password'];
+    $sql="SELECT * FROM user WHERE username=:username AND password=:password";
+    $user_account = pdo($pdo,$sql,['username'=>$username,'password'=>$password])->fetch();
+    if($user_account){
+        $_SESSION['login']=$user_account['role'];
+        header('Location: ../admin/index.php');
+    }
+    else{
+        $error['invalid']='Sai tên đăng nhập hoặc mật khẩu';
+    }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +35,12 @@
 
 <div class="logo"></div>
 <div class="login-block">
-    <form>
+    <form action="" method="post">
         <h1>Login</h1>
-        <input type="text" value="" placeholder="Username" id="username" />
-        <input type="password" value="" placeholder="Password" id="password" />
-        <button>Login</button>
+        <input type="text" value="" placeholder="Username" name="username" />
+        <input type="password" value="" placeholder="Password" name="password" />
+        <span style="font-size: 14px;color:red;" class=""><?php echo isset($error['invalid'])?$error['invalid']:""?></span>
+        <button style="margin-top:20px">Login</button>
     </form>
 </div>
 </body>

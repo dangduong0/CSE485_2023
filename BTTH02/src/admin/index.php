@@ -1,3 +1,17 @@
+ <?php
+ session_start();
+ if(!$_SESSION['login']){
+    header ('Location:../login/index.php');
+ }
+ if($_SESSION['login']&& $_SESSION['login']!='admin' && $_SESSION['login']!='student'){
+    header('Location: ../user/Teacher/index.php');
+ }
+ if($_SESSION['login']&& $_SESSION['login']!='admin' && $_SESSION['login']!='teacher'){
+    header('Location: ../user/Student/index.php');
+ }
+ 
+ 
+ ?>
  <!-- Sidebar/menu -->
     <?php include 'sidebar.php' ?>
    
