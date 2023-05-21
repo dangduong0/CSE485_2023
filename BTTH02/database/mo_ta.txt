@@ -1,4 +1,4 @@
-Mô tả cấu trúc cơ sở dữ liệu cho cho trang web với chức năng điểm danh online
+Mô tả cấu trúc cơ sở dữ liệu cho cho trang web với chức năng điểm danh
 
 Bảng Sinh viên :
 
