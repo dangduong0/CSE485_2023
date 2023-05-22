@@ -1,3 +1,33 @@
+Mô tả chức năng của hệ thống điểm danh: 
+
+Đăng ký và đăng nhập:
+    Sinh viên và giảng viên có thể đăng ký tài khoản mới bằng cách cung cấp thông tin cá nhân như tên, email và mật khẩu.
+    Người dùng đã đăng ký có thể đăng nhập vào hệ thống bằng thông tin đăng nhập của mình.
+Quản lý sinh viên:
+    Quản lý danh sách sinh viên với thông tin chi tiết như tên, mã sinh viên và địa chỉ email.
+    Thêm, sửa, xóa thông tin sinh viên trong cơ sở dữ liệu.
+Quản lý Giảng viên:
+    Quản lý danh sách giảng viên với thông tin chi tiết như tên,địa chỉ email,sdt.
+    Thêm, sửa, xóa thông tin giảng viên trong cơ sở dữ liệu.    
+Quản lý khóa học:
+    Quản lý danh sách khóa học bao gồm mã khóa học, tiêu đề và mô tả.
+    Thêm, sửa, xóa thông tin khóa học trong cơ sở dữ liệu.
+    Xem danh sách sinh viên đăng ký khóa học và thông tin liên quan.
+Quản lý lớp học:
+    Tạo và quản lý thông tin về các lớp học phần trong khóa học.
+    Thêm, sửa đổi hoặc xóa thông tin về lớp học phần, bao gồm thông tin về giảng viên phụ trách và khoảng thời gian.
+    Xem danh sách sinh viên đã đăng ký và tham gia lớp học phần.    
+Điểm danh:
+    Giảng viên có thể điểm danh các sinh viên tham gia khóa học vào ngày cụ thể.
+    Cập nhật trạng thái tham dự của sinh viên (có mặt, vắng mặt) cho từng buổi học.
+    Lưu trữ thông tin về sự tham dự và trạng thái tham dự trong cơ sở dữ liệu.
+Báo cáo:
+    Tạo báo cáo về sự tham dự của sinh viên theo khóa học hoặc sinh viên cụ thể.
+    Hiển thị thông tin thống kê, ví dụ như tổng số buổi học, số buổi có mặt, số buổi vắng mặt và tỷ lệ tham dự.
+Phân quyền và bảo mật:
+    Xác định vai trò của người dùng (quản trị viên, giảng viên, sinh viên) để giới hạn quyền truy cập vào các chức năng và dữ liệu trong hệ thống.
+    Bảo mật thông tin cá nhân và hạn chế truy cập không ủy quyền.
+
 Mô tả cấu trúc cơ sở dữ liệu cho cho trang web với chức năng điểm danh
 
 Bảng Sinh viên :
