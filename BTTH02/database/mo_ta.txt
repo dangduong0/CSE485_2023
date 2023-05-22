@@ -1,0 +1,44 @@
+Mô tả cấu trúc cơ sở dữ liệu cho cho trang web với chức năng điểm danh
+
+Bảng Sinh viên :
+
+    id_sinhvien (Khóa chính): ID sinh viên duy nhất.
+    ma_sinhvien;
+    ten_sinhvien: Tên sinh viên.
+    email: Email của sinh viên.
+    
+Bảng Khóa học:
+
+    id_khoahoc (Khóa chính): ID khóa học duy nhất.
+    ma_khoahoc: Mã khóa học.
+    tieu_de: Tiêu đề khóa học.
+    mo_ta: Mô tả khóa học.
+
+Bảng Attendance:
+
+    id (Khóa chính): ID  duy nhất.
+    ngay_tham_du: Ngày điểm danh.
+    id_khoahoc (Khóa ngoại): Liên kết với bảng Khóa học.
+    id_sinhvien (Khóa ngoại): Liên kết với bảng Sinh viên.
+    trangthai_thamdu: Trạng thái tham dự (ví dụ: có mặt, vắng mặt).
+
+Bảng Giảng viên:
+
+    id_giangvien (Khóa chính): ID giảng viên duy nhất.
+    ten_giangvien: Tên giảng viên.
+    email: Địa chỉ email của giảng viên.
+    phone: SDT liên hệ của giảng viên.
+
+Bảng Lớp học phần:
+
+    id_lophoc (Khóa chính): ID lớp học duy nhất.
+    id_khoahoc (Khóa ngoại): Liên kết với bảng Khóa học.
+    id_giangvien (Khóa ngoại): Liên kết với bảng Giảng viên.
+    khoang_thoigian: Khoảng thời gian của lớp học.
+
+Bảng Người dùng:
+
+    id_nguoidung (Khóa chính): ID người dùng duy nhất.
+    username: Tên người dùng.
+    matkhau: Mật khẩu của người dùng.
+    role: Vai trò của người dùng (quản trị viên, giảng viên, sinh viên).
